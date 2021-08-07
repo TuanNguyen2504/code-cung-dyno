@@ -1,0 +1,80 @@
+:root {
+  --bg-color-primary: #f5f5f5;
+  --bg-color-secondary: #fff;
+  --bg-toggle-btn: #888;
+
+  --box-shadow: rgba(100, 100, 110, 0.2) 0px 8px 28px 0px;
+  --title-color: #1e1e1e;
+  --text-color: #4e4e4e;
+}
+
+[data-theme='dark'] {
+  --bg-color-primary: #18191a;
+  --bg-color-secondary: #242526;
+  --bg-toggle-btn: #4e4f50;
+
+  --box-shadow: rgba(25, 25, 25, 0.2) 0px 8px 28px 0px;
+  --title-color: #f1f2f3;
+  --text-color: #d4d5d6;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-color-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 24px;
+  color: var(--title-color);
+}
+
+.text {
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.wrapper {
+  width: 500px;
+  text-align: center;
+  padding: 48px;
+  box-shadow: var(--box-shadow);
+  background-color: var(--bg-color-secondary);
+  border-radius: 12px;
+}
+
+#toggleBtn {
+  width: 80px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: var(--bg-toggle-btn);
+  box-shadow: var(--box-shadow);
+
+  position: fixed;
+  left: 50px;
+  bottom: 50px;
+}
+
+#toggleBtn::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  bottom: 2px;
+
+  width: 36px;
+  height: 36px;
+  background-color: var(--bg-color-secondary);
+  border-radius: 50%;
+
+  cursor: pointer;
+  transition: all 0.35s;
+}
+
+#toggleBtn.active::before {
+  transform: translateX(40px);
+}
