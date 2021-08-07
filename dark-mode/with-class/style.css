@@ -58,3 +58,29 @@ body {
 #toggleBtn.active::before {
   transform: translateX(40px);
 }
+
+body.darkmode-active {
+  background-color: #18191a;
+}
+
+.darkmode-active .wrapper {
+  box-shadow: rgba(25, 25, 25, 0.2) 0px 8px 28px 0px;
+  background-color: #242526;
+}
+
+.darkmode-active .title {
+  color: #f1f2f3;
+}
+
+.darkmode-active .text {
+  color: #d4d5d6;
+}
+
+.darkmode-active #toggleBtn {
+  background-color: #4e4f50;
+  box-shadow: rgba(25, 25, 25, 0.2) 0px 8px 28px 0px;
+}
+
+.darkmode-active #toggleBtn::before {
+  background-color: #242526;
+}
