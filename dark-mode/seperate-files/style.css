@@ -1,0 +1,52 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 500px;
+  text-align: center;
+  padding: 48px;
+  border-radius: 12px;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.text {
+  font-size: 16px;
+}
+
+#toggleBtn {
+  width: 80px;
+  height: 40px;
+  border-radius: 20px;
+
+  position: fixed;
+  left: 50px;
+  bottom: 50px;
+}
+
+#toggleBtn::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  bottom: 2px;
+
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+
+  cursor: pointer;
+  transition: all 0.35s;
+}
+
+#toggleBtn.active::before {
+  transform: translateX(40px);
+}

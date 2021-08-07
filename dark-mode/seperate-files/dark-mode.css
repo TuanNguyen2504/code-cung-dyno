@@ -1,0 +1,25 @@
+body {
+  background-color: #18191a;
+}
+
+.wrapper {
+  box-shadow: rgba(25, 25, 25, 0.2) 0px 8px 28px 0px;
+  background-color: #242526;
+}
+
+.title {
+  color: #f1f2f3;
+}
+
+.text {
+  color: #d4d5d6;
+}
+
+#toggleBtn {
+  background-color: #4e4f50;
+  box-shadow: rgba(25, 25, 25, 0.2) 0px 8px 28px 0px;
+}
+
+#toggleBtn::before {
+  background-color: #242526;
+}
