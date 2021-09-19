@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lazy Loading bằng thuộc tính của thẻ img</title>
+    <style>
+      .grid {
+        max-width: 1140px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      img {
+        width: 100%;
+        height: 450px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <img src="http://lorempixel.com/350/350" loading="lazy" alt="Photos" />
+      <img src="http://lorempixel.com/350/360" loading="lazy" alt="Photos" />
+      <img src="http://lorempixel.com/350/370" loading="lazy" alt="Photos" />
+      <img src="http://lorempixel.com/350/380" loading="lazy" alt="Photos" />
+      <img src="http://lorempixel.com/350/390" loading="lazy" alt="Photos" />
+      <img src="http://lorempixel.com/350/320" loading="lazy" alt="Photos" />
+      <img src="http://lorempixel.com/350/330" loading="lazy" alt="Photos" />
+      <img src="http://lorempixel.com/350/340" loading="lazy" alt="Photos" />
+      <img src="http://lorempixel.com/320/350" loading="lazy" alt="Photos" />
+      <img src="http://lorempixel.com/351/350" loading="lazy" alt="Photos" />
+      <img src="http://lorempixel.com/352/350" loading="lazy" alt="Photos" />
+      <img src="http://lorempixel.com/353/350" loading="lazy" alt="Photos" />
+      <img src="http://lorempixel.com/354/350" loading="lazy" alt="Photos" />
+    </div>
+  </body>
+</html>

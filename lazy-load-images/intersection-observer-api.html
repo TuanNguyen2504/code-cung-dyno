@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lazy Loading với Intersection Observer API</title>
+    <style>
+      .grid {
+        max-width: 1140px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      img {
+        width: 100%;
+        height: 450px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <img
+        class="lazy-load"
+        data-src="http://lorempixel.com/450/450"
+        alt="Photos"
+      />
+      <img
+        class="lazy-load"
+        data-src="http://lorempixel.com/450/460"
+        alt="Photos"
+      />
+      <img
+        class="lazy-load"
+        data-src="http://lorempixel.com/450/470"
+        alt="Photos"
+      />
+      <img
+        class="lazy-load"
+        data-src="http://lorempixel.com/450/480"
+        alt="Photos"
+      />
+      <img
+        class="lazy-load"
+        data-src="http://lorempixel.com/450/490"
+        alt="Photos"
+      />
+      <img
+        class="lazy-load"
+        data-src="http://lorempixel.com/450/420"
+        alt="Photos"
+      />
+      <img
+        class="lazy-load"
+        data-src="http://lorempixel.com/450/40"
+        alt="Photos"
+      />
+      <img
+        class="lazy-load"
+        data-src="http://lorempixel.com/450/440"
+        alt="Photos"
+      />
+      <img
+        class="lazy-load"
+        data-src="http://lorempixel.com/420/450"
+        alt="Photos"
+      />
+      <img
+        class="lazy-load"
+        data-src="http://lorempixel.com/451/450"
+        alt="Photos"
+      />
+      <img
+        class="lazy-load"
+        data-src="http://lorempixel.com/452/450"
+        alt="Photos"
+      />
+      <img
+        class="lazy-load"
+        data-src="http://lorempixel.com/454/451"
+        alt="Photos"
+      />
+      <img
+        class="lazy-load"
+        data-src="http://lorempixel.com/454/452"
+        alt="Photos"
+      />
+      <img
+        class="lazy-load"
+        data-src="http://lorempixel.com/454/453"
+        alt="Photos"
+      />
+    </div>
+  </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const imgLazyObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Chép link ảnh qua src
+              entry.target.src = entry.target.dataset?.src;
+
+              // bỏ theo dõi bức ảnh này
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          // Chạy callback ở trên khi ảnh vừa vào view-port
+          threshold: 0,
+        },
+      );
+
+      document.querySelectorAll('img.lazy-load').forEach((img) => {
+        imgLazyObserver.observe(img);
+      });
+    });
+  </script>
+</html>
